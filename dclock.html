@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Digital Clock </title>
+   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+
+    <style>
+        .heads {
+            height: 100px;
+            background-color: rgb(129, 243, 243);
+            margin: 0px;
+            border: 3px solid black;
+            padding: 25px;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        body {
+            background: black;
+        }
+
+        .cl {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: #17D4FE;
+            font-size: 60px;
+            /* font-family:cursive; */
+            font-family:Orbitron;
+
+            letter-spacing: 7px;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="digc">
+        <div class="heads">welcome to digital world </div>
+        <div class="cl">
+            <span id="time">
+
+            </span>
+        </div>
+
+    </div>
+    <script>
+        let a;
+        let time;
+        setInterval(() => {
+            a = new Date()
+            let f = a.getHours >= 12 ? 'AM' : 'PM';
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds() + ' ' + f;
+            document.getElementById('time').innerHTML = time;
+            document.getElementById("time").textContent = time;
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digital clock</title>
+    <style>
+        *{
+            margin: 10px solid black;
+            padding: 10px;     
+        }
+        .Dcontainer{
+            /* display: flex; */
+            margin: auto;
+            background-color: rgb(125, 204, 214);
+            color:rgb(0, 0, 0);
+            width: 400px;
+            height: 200px;            
+            font-size: 30px; 
+            padding: 25px;
+        }  
+    </style>
+    <script>
+       let a;
+       let time;
+        setInterval(() => {         
+        a=new Date()  
+        let f=a.getHours >= 12 ? 'AM' : 'PM';      
+         time=a.getHours()+':'+a.getMinutes()+':'+a.getSeconds()+'-'+f;
+        document.getElementById('time').innerHTML=time;
+    }, 1000);
+    </script>
+</head>     
+<body>
+    <div class="Dcontainer">   
+        <h1 class="display"><u> Digital clock </u>  <br><span id="time">
+        </span>
+    </h1>
+    </div>
+</body>
+</html>
